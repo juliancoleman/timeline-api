@@ -1,0 +1,8 @@
+{
+  "name": "timeline-api",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/juliancoleman/timeline-api",
+  "author": "Julian Coleman <julcol03@gmail.com>",
+  "license": "MIT"
+}
