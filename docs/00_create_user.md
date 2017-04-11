@@ -20,6 +20,7 @@ sample body:
 	"emergency_contact_number": String,
 	"emergency_contact_relationship": String,
 	"allergies": String,
+  "barcode_number": Number,
 	"password": String,
 	"confirm_password": String
 }
@@ -39,6 +40,7 @@ example response:
 	"emergency_contact_number": String,
 	"emergency_contact_relationship": String,
 	"allergies": String,
+  "barcode_number": Number,
   "updated_at": Date,
   "created_at": Date,
   "id": Number,

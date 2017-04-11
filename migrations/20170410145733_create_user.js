@@ -11,6 +11,7 @@ exports.up = knex =>
     table.string("emergency_contact_number");
     table.string("emergency_contact_relationship");
     table.string("allergies");
+    table.integer("barcode_number");
     table.string("encrypted_password");
     table.timestamps();
     table.timestamp("deleted_at");

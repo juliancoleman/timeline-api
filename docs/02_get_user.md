@@ -21,6 +21,7 @@ example response:
   "emergencyContactNumber": String,
   "emergencyContactRelationship": String,
   "allergies": String,
+  "barcode_number": Number,
   "createdAt": Date,
   "updatedAt": Date,
   "deletedAt": null,
