@@ -3,6 +3,7 @@ exports.up = knex =>
     table.increments();
     table.integer("role_camp_id");
     table.integer("itinerary_id");
+    table.string("location");
     table.timestamps();
     table.timestamp("deleted_at");
   });
