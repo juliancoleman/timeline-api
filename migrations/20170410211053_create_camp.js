@@ -1,6 +1,5 @@
 exports.up = knex =>
-  knex.schema
-    .createTable("camp", (table) => {
+  knex.schema.createTable("camp", (table) => {
       table.increments();
       table.string("type");
       table.string("campus");
