@@ -1,6 +1,6 @@
-const Promise = require("bluebird");
-// https://github.com/hapijs/hapi/issues/2394#issuecomment-73442383
-const Hapi = Promise.promisifyAll(require("hapi"));
+import * as Promise from "bluebird";
+import * as Hapi from "hapi";
+Promise.promisifyAll(Hapi);
 const unhandledRejection = require("unhandled-rejection");
 
 require("require-all")({
@@ -8,12 +8,12 @@ require("require-all")({
   recursive: true,
 });
 
-const { validateToken, algorithm } = appRequire("lib/authentication/service");
+import { validateToken, algorithm } from "./lib/authentication/service";
 
 const server = new Hapi.Server({ debug: false });
 server.connection({ port: 7000, routes: { cors: true } });
 
-const routes = appRequire("routes");
+import * as routes from "./routes";
 
 const good = {
   register: require("good"),
@@ -43,7 +43,7 @@ const mrhorse = {
   },
 };
 
-module.exports = server.registerAsync([
+module.exports = (server as any).registerAsync([
   require("hapi-boom-decorators"),
   require("hapi-auth-jwt"),
   good,
@@ -56,7 +56,7 @@ module.exports = server.registerAsync([
     console.error(err);
   }
 
-  rejectionEmitter.on("unhandledRejection", (error) => {
+  rejectionEmitter.on("unhandledRejection", (error: Error) => {
     console.error(error.toString());
 
     if (error.stack) {

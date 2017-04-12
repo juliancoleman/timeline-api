@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "allowJs": true,
+    "target": "es2017",
+    "noImplicitAny": true,
+    "module": "none"
+  },
+  "files": [
+    "index.ts",
+    "Knexfile.ts"
+  ]
+}

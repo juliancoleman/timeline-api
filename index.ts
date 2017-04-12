@@ -1,5 +1,4 @@
-require("apprequire")(__dirname);
-const Promise = require("bluebird");
+import * as Promise from "bluebird";
 
 Promise.coroutine(function* () {
   const server = yield require("./server");
