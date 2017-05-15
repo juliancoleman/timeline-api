@@ -16,7 +16,7 @@ const post = ({ payload }, reply) =>
 
 module.exports = {
   method: "POST",
-  path: "/roles",
+  path: "/api/v1/roles",
   handler: post,
   config: {
     validate: {

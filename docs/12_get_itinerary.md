@@ -2,7 +2,7 @@
 
 method: `GET`
 
-path: `/itineraries/{itineraryId}`
+path: `/api/v1/itineraries/{itineraryId}`
 
 auth: `true`
 
@@ -25,7 +25,7 @@ example response:
 
 method: `GET`
 
-path: `/itineraries`
+path: `/api/v1/itineraries`
 
 auth: `true`
 

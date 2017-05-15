@@ -15,7 +15,7 @@ const getItinerary = ({ params }, reply) => {
     );
 };
 
-const getItineraries = (_, reply) => {
+const getItineraries = (request, reply) => {
   Service.getItineraries()
     .then(itineraries => reply(itineraries))
     .catch(respondCustomError(reply));
@@ -24,12 +24,12 @@ const getItineraries = (_, reply) => {
 module.exports = [
   {
     method: "GET",
-    path: "/itineraries",
+    path: "/api/v1/itineraries",
     handler: getItineraries,
   },
   {
     method: "GET",
-    path: "/itineraries/{itineraryId}",
+    path: "/api/v1/itineraries/{itineraryId}",
     handler: getItinerary,
   },
 ];

@@ -26,7 +26,7 @@ const getUsers = (request, reply) => {
 module.exports = [
   {
     method: "GET",
-    path: "/users",
+    path: "/api/v1/users",
     handler: getUsers,
     config: {
       validate: {
@@ -36,7 +36,7 @@ module.exports = [
   },
   {
     method: "GET",
-    path: "/users/{userId}",
+    path: "/api/v1/users/{userId}",
     handler: getUser,
   },
 ];

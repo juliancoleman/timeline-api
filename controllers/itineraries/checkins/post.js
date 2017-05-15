@@ -21,7 +21,7 @@ const post = ({ payload, params }, reply) => {
 
 module.exports = {
   method: "POST",
-  path: "/itineraries/{itineraryId}/checkin",
+  path: "/api/v1/itineraries/{itineraryId}/checkin",
   handler: post,
   config: {
     validate: {

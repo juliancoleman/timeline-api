@@ -17,7 +17,7 @@ const post = (request, reply) => {
 
 module.exports = {
   method: "POST",
-  path: "/users",
+  path: "/api/v1/users",
   handler: post,
   config: {
     auth: false,

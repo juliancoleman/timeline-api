@@ -2,7 +2,7 @@
 
 method: `POST`
 
-path: `/users/{userId}/camps`
+path: `/api/v1/users/{userId}/camps`
 
 auth: `true`
 

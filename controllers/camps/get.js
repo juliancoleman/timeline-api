@@ -15,12 +15,12 @@ const getCamp = ({ params }, reply) => {
 module.exports = [
   {
     method: "GET",
-    path: "/camps",
+    path: "/api/v1/camps",
     handler: getCamps,
   },
   {
     method: "GET",
-    path: "/camps/{campId}",
+    path: "/api/v1/camps/{campId}",
     handler: getCamp,
   },
 ];

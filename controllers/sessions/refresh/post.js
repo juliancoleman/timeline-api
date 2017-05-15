@@ -3,8 +3,8 @@ const Validator = appRequire("lib/sessions/refresh/validator");
 
 const { respondCustomError } = appRequire("helpers/responses");
 
-const post = (request, reply) => {
-  const { token } = request.payload;
+const post = ({ payload }, reply) => {
+  const { token } = payload;
 
   Service.refreshToken(token)
     .then((refreshedToken) => {
@@ -19,7 +19,7 @@ const post = (request, reply) => {
 
 module.exports = {
   method: "POST",
-  path: "/sessions/refresh",
+  path: "/api/v1/sessions/refresh",
   handler: post,
   config: {
     auth: false,

@@ -18,6 +18,6 @@ const getCampItineraries = ({ params }, reply) => {
 
 module.exports = {
   method: "GET",
-  path: "/camps/{campId}/itineraries",
+  path: "/api/v1/camps/{campId}/itineraries",
   handler: getCampItineraries,
 };

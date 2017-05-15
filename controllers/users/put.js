@@ -16,7 +16,7 @@ const put = ({ payload, params }, reply) => {
 
 module.exports = {
   method: "PUT",
-  path: "/users/{userId}",
+  path: "/api/v1/users/{userId}",
   handler: put,
   config: {
     validate: {

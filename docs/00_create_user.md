@@ -2,7 +2,7 @@
 
 method: `POST`
 
-path: `/users`
+path: `/api/v1/users`
 
 auth: `false`
 

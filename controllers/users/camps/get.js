@@ -17,7 +17,7 @@ const get = ({ params, query }, reply) => {
 
 module.exports = {
   method: "GET",
-  path: "/users/{userId}/camps",
+  path: "/api/v1/users/{userId}/camps",
   handler: get,
   config: {
     validate: {

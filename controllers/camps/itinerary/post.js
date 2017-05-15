@@ -17,7 +17,7 @@ const post = ({ payload, params }, reply) => {
 
 module.exports = {
   method: "POST",
-  path: "/camps/{campId}/itineraries",
+  path: "/api/v1/camps/{campId}/itineraries",
   handler: post,
   config: {
     validate: {

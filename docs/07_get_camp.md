@@ -2,7 +2,7 @@
 
 method: `GET`
 
-path: `/camps/{campId}`
+path: `/api/v1/camps/{campId}`
 
 auth: `true`
 

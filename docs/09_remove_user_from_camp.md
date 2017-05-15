@@ -2,7 +2,7 @@
 
 method: `DELETE`
 
-path: `/users/{userId}/camps/{campId}`
+path: `/api/v1/users/{userId}/camps/{campId}`
 
 auth: `true`
 

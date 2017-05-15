@@ -2,7 +2,7 @@
 
 method: `GET`
 
-path: `/users`
+path: `/api/v1/users`
 
 auth: `true`
 

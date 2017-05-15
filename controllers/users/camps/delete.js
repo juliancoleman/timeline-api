@@ -20,6 +20,6 @@ const get = ({ params, query }, reply) => {
 
 module.exports = {
   method: "DELETE",
-  path: "/users/{userId}/camps/{campId}",
+  path: "/api/v1/users/{userId}/camps/{campId}",
   handler: get,
 };

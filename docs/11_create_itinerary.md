@@ -2,7 +2,7 @@
 
 method: `POST`
 
-path: `/camps/{campId}/itinerary`
+path: `/api/v1/camps/{campId}/itinerary`
 
 auth: `true`
 

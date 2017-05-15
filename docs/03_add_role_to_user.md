@@ -2,7 +2,7 @@
 
 method: `POST`
 
-path: `/roles`
+path: `/api/v1/roles`
 
 auth: `true`
 

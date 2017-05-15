@@ -23,7 +23,7 @@ const post = ({ params, payload }, reply) => {
 
 module.exports = {
   method: "POST",
-  path: "/users/{userId}/camps",
+  path: "/api/v1/users/{userId}/camps",
   handler: post,
   config: {
     validate: {
