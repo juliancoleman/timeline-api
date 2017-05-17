@@ -4,7 +4,11 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon -e js -i node_modules -i index.js",
-    "knex": "knex"
+    "knex": "knex",
+    "heroku-postbuild": "knex migrate:latest"
+  },
+  "engines": {
+    "node": "7.8.0"
   },
   "repository": "https://github.com/juliancoleman/timeline-api",
   "author": "Julian Coleman <julcol03@gmail.com>",

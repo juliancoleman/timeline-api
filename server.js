@@ -1,4 +1,5 @@
 const Promise = require("bluebird");
+const R = require("ramda");
 // https://github.com/hapijs/hapi/issues/2394#issuecomment-73442383
 const Hapi = Promise.promisifyAll(require("hapi"));
 const unhandledRejection = require("unhandled-rejection");
@@ -11,7 +12,7 @@ require("require-all")({
 const { validateToken, algorithm } = appRequire("lib/authentication/service");
 
 const server = new Hapi.Server({ debug: false });
-server.connection({ port: 7000, routes: { cors: true } });
+server.connection({ port: R.defaultTo(7000, process.env.PORT), routes: { cors: true } });
 
 const routes = appRequire("routes");
 
