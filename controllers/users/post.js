@@ -4,9 +4,7 @@ const Validator = appRequire("lib/users/post/validator");
 
 const UserAlreadyExistsError = appRequire("lib/users/errors/user_already_exists_error");
 
-const post = (request, reply) => {
-  const payload = request.payload;
-
+const post = ({ payload }, reply) => {
   Service.createUser(payload)
     .then(response => reply(response.toJSON()).code(201))
     .catch(

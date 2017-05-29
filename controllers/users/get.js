@@ -17,9 +17,9 @@ const getUser = (request, reply) => {
 };
 
 const getUsers = (request, reply) => {
-  const { user, query } = request;
+  const { query } = request;
 
-  Service.getUsers(user, query)
+  Service.getUsers(query)
     .then(users => reply(users));
 };
 
