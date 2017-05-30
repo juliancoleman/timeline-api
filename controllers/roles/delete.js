@@ -4,15 +4,18 @@ const Validator = appRequire("lib/roles/delete/validator");
 
 const RoleNotFoundError = appRequire("lib/roles/errors/role_not_found_error");
 
-const post = ({ payload }, reply) =>
-  Service.removeRole(payload)
+const remove = ({ params }, reply) => {
+  const { roleId } = params;
+
+  Service.removeRole(roleId)
     .then(() => reply().code(204))
     .catch(RoleNotFoundError, respondCustomError(reply));
+};
 
 module.exports = {
   method: "DELETE",
   path: "/api/v1/roles/{roleId}",
-  handler: post,
+  handler: remove,
   config: {
     validate: {
       params: Validator,

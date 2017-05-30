@@ -5,11 +5,11 @@ const { respondCustomError } = appRequire("helpers/responses");
 const UserNotFoundError = appRequire("lib/users/errors/user_not_found_error");
 
 const getUser = (request, reply) => {
-  const { params, user } = request;
+  const { params } = request;
   const { userId } = params;
 
-  Service.getUser(user, userId)
-    .then(u => reply(u))
+  Service.getUser(userId)
+    .then(user => reply(user))
     .catch(
       UserNotFoundError,
       respondCustomError(reply) // eslint-disable-line
