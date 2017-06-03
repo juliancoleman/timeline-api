@@ -8,7 +8,7 @@ const destroy = ({ params }, reply) => {
   const { campId } = params;
 
   Service.deleteCamp(campId)
-    .then(camp => reply(camp))
+    .then(() => reply().code(204))
     .catch(CampNotFoundError, respondCustomError(reply));
 };
 

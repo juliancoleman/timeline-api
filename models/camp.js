@@ -51,6 +51,9 @@ const camp = BaseModel.extend({
       });
     });
   },
+  itineraries() {
+    return this.hasMany("Itinerary");
+  },
 });
 
 module.exports = Bookshelf.model("Camp", camp);
