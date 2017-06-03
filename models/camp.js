@@ -15,6 +15,15 @@ const paginationCountDistinctQueryStatement = {
 const camp = BaseModel.extend({
   tableName: "camp",
   customError: CampNotFoundError,
+  virtuals: {
+    groupMembers() {
+      if (this.related("roles")) {
+        return this.related("roles").map(role => role.related("user"));
+      }
+
+      return [];
+    },
+  },
   initialize(...args) {
     this.on("fetching fetching:collection", (model, columns, options) => {
       const isPaginationQuery = R.contains(
