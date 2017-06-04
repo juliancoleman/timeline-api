@@ -3,6 +3,11 @@ const Service = appRequire("lib/itineraries/service");
 
 const ItineraryNotFoundError = appRequire("lib/itineraries/errors/itinerary_not_found_error");
 
+const getItineraries = ({ user }, reply) => {
+  Service.getItineraries(user)
+    .then(itineraries => reply(itineraries));
+};
+
 const getItinerary = ({ params }, reply) => {
   const { itineraryId } = params;
 
@@ -14,8 +19,15 @@ const getItinerary = ({ params }, reply) => {
     );
 };
 
-module.exports = {
-  method: "GET",
-  path: "/api/v1/itineraries/{itineraryId}",
-  handler: getItinerary,
-};
+module.exports = [
+  {
+    method: "GET",
+    path: "/api/v1/itineraries",
+    handler: getItineraries,
+  },
+  {
+    method: "GET",
+    path: "/api/v1/itineraries/{itineraryId}",
+    handler: getItinerary,
+  },
+];
