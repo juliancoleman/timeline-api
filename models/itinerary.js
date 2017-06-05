@@ -28,9 +28,18 @@ const itinerary = BaseModel.extend({
   camp() {
     return this.belongsTo("Camp");
   },
-  checkin() {
-    return this.hasMany("Checkin");
-  },
+  // checkedInStudents() {
+  //   return this.hasMany("RoleCamp")
+  //     .through("Checkin", "id", "itinerary_id", "role_camp_id", "id");
+  // },
+  // notCheckedInStudents() {
+  //   const collection = this.belongsTo("User").hasMany("RoleCamp")
+  //     .through("Checkin", "id", "itinerary_id", "role_camp_id", "id");
+
+  //   console.log(collection);
+
+  //   return collection;
+  // },
 });
 
 module.exports = Bookshelf.model("Itinerary", itinerary);
