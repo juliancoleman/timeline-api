@@ -23,6 +23,14 @@ const getUsers = (request, reply) => {
     .then(users => reply(users));
 };
 
+const getUserByBarcode = ({ params }, reply) => {
+  const { barcodeNumber } = params;
+
+  Service.getUserByBarcode(barcodeNumber)
+    .then(reply)
+    .catch(UserNotFoundError, respondCustomError(reply));
+};
+
 module.exports = [
   {
     method: "GET",
@@ -38,5 +46,10 @@ module.exports = [
     method: "GET",
     path: "/api/v1/users/{userId}",
     handler: getUser,
+  },
+  {
+    method: "GET",
+    path: "/api/v1/users/barcode/{barcodeNumber}",
+    handler: getUserByBarcode,
   },
 ];

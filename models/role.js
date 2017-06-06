@@ -9,6 +9,9 @@ const role = BaseModel.extend({
   user() {
     return this.belongsTo("User");
   },
+  camps() {
+    return this.belongsToMany("Camp", "role_camp");
+  },
 });
 
 module.exports = Bookshelf.model("Role", role);
