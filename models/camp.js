@@ -49,7 +49,8 @@ const camp = BaseModel.extend({
     return BaseModel.prototype.initialize.apply(this, args);
   },
   roles() {
-    return this.belongsToMany("Role", "role_camp");
+    return this.belongsToMany("Role", "role_camp")
+      .where("role_camp.deleted_at", "=", null);
   },
   leader() {
     return this.roles().query((qb) => {
