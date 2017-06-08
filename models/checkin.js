@@ -4,7 +4,7 @@ const Bookshelf = appRequire("config/bookshelf");
 const checkin = BaseModel.extend({
   tableName: "checkin",
   itinerary() {
-    this.belongsTo("itinerary");
+    return this.belongsTo("itinerary");
   },
 });
 
