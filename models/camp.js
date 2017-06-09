@@ -50,16 +50,7 @@ const camp = BaseModel.extend({
   },
   roles() {
     return this.belongsToMany("Role", "role_camp")
-      .where("role_camp.deleted_at", "=", null);
-  },
-  leader() {
-    return this.roles().query((qb) => {
-      qb.where({
-        "role.name": "Leader",
-        "role_camp.deleted_at": null,
-        "role.deleted_at": null,
-      });
-    });
+      .query({ where: { "role_camp.deleted_at": null } });
   },
   itineraries() {
     return this.hasMany("Itinerary");
