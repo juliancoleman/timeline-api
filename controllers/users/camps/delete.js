@@ -5,7 +5,7 @@ const UserNotFoundError = appRequire("lib/users/errors/user_not_found_error");
 const CampNotFoundError = appRequire("lib/camps/errors/camp_not_found_error");
 const RoleCampNotFoundError = appRequire("lib/roles/errors/role_camp_not_found_error");
 
-const get = ({ params, query }, reply) => {
+const destroy = ({ params, query }, reply) => {
   const { userId, campId } = params;
 
   Service.removeUserFromCamp(userId, campId)
@@ -21,5 +21,5 @@ const get = ({ params, query }, reply) => {
 module.exports = {
   method: "DELETE",
   path: "/api/v1/users/{userId}/camps/{campId}",
-  handler: get,
+  handler: destroy,
 };

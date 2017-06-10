@@ -8,11 +8,8 @@ const post = ({ payload, params }, reply) => {
   const { campId } = params;
 
   Service.createItinerary(campId, payload)
-    .then(itinerary => reply(itinerary))
-    .catch(
-      CampNotFoundError,
-      respondCustomError(reply) // eslint-disable-line
-    );
+    .then(reply)
+    .catch(CampNotFoundError, respondCustomError(reply));
 };
 
 module.exports = {

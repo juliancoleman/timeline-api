@@ -6,12 +6,10 @@ const UserNotFoundError = appRequire("lib/users/errors/user_not_found_error");
 
 const put = ({ payload, params }, reply) => {
   const { userId } = params;
+
   Service.updateUser(userId, payload)
-    .then(user => reply(user))
-    .catch(
-      UserNotFoundError,
-      respondCustomError(reply) // eslint-disable-line
-    );
+    .then(reply)
+    .catch(UserNotFoundError, respondCustomError(reply));
 };
 
 module.exports = {

@@ -8,11 +8,8 @@ const get = ({ params, query }, reply) => {
   const { userId } = params;
 
   Service.getCampsByUser(userId, query)
-    .then(camps => reply(camps))
-    .catch(
-      UserNotFoundError,
-      respondCustomError(reply) // eslint-disable-line
-    );
+    .then(reply)
+    .catch(UserNotFoundError, respondCustomError(reply));
 };
 
 module.exports = {

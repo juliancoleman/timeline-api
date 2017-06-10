@@ -7,10 +7,7 @@ const UserAlreadyExistsError = appRequire("lib/users/errors/user_already_exists_
 const post = ({ payload }, reply) => {
   Service.createUser(payload)
     .then(response => reply(response.toJSON()).code(201))
-    .catch(
-      UserAlreadyExistsError,
-      respondCustomError(reply) // eslint-disable-line
-    );
+    .catch(UserAlreadyExistsError, respondCustomError(reply));
 };
 
 module.exports = {

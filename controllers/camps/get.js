@@ -1,15 +1,20 @@
+const { respondCustomError } = appRequire("helpers/responses");
 const Service = appRequire("lib/camps/service");
+
+const CampNotFoundError = appRequire("lib/camps/errors/camp_not_found_error");
 
 const getCamps = (request, reply) => {
   Service.getCamps()
-    .then(camps => reply(camps));
+    .then(reply)
+    .catch(respondCustomError(reply));
 };
 
 const getCamp = ({ params }, reply) => {
   const { campId } = params;
 
   Service.getCamp(campId)
-    .then(camp => reply(camp));
+    .then(reply)
+    .catch(CampNotFoundError, respondCustomError(reply));
 };
 
 module.exports = [

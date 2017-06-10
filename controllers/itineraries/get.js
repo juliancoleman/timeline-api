@@ -5,18 +5,16 @@ const ItineraryNotFoundError = appRequire("lib/itineraries/errors/itinerary_not_
 
 const getItineraries = ({ user }, reply) => {
   Service.getItineraries(user)
-    .then(itineraries => reply(itineraries));
+    .then(reply)
+    .catch(respondCustomError(reply));
 };
 
 const getItinerary = ({ params }, reply) => {
   const { itineraryId } = params;
 
   Service.getItinerary(itineraryId)
-    .then(itinerary => reply(itinerary))
-    .catch(
-      ItineraryNotFoundError,
-      respondCustomError(reply) // eslint-disable-line
-    );
+    .then(reply)
+    .catch(ItineraryNotFoundError, respondCustomError(reply));
 };
 
 module.exports = [

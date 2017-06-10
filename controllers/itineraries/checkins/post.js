@@ -10,7 +10,7 @@ const post = ({ payload, params }, reply) => {
   const { itineraryId } = params;
 
   Service.checkInStudent(itineraryId, payload)
-    .then(checkin => reply(checkin))
+    .then(reply)
     .catch(
       UserNotFoundError,
       RoleNotFoundError,

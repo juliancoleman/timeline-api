@@ -8,7 +8,7 @@ const put = ({ payload, params }, reply) => {
   const { campId } = params;
 
   Service.updateCamp(campId, payload)
-    .then(camp => reply(camp))
+    .then(reply)
     .catch(CampNotFoundError, respondCustomError(reply));
 };
 
